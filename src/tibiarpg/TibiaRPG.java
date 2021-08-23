@@ -10,6 +10,9 @@ import java.util.Scanner;
 /**
  *
  * @author KHYLE
+ * 
+ * This program is based on the NPC character Sam in the MMORPG game called Tibia
+ * Source: https://tibia.fandom.com/wiki/Sam
  */
 public class TibiaRPG {
 
@@ -31,10 +34,19 @@ public class TibiaRPG {
             System.out.println("Sam: Hello there, adventurer! Need a deal in weapons or armor? I'm your man!");
 
             String service = scanner.nextLine().toLowerCase();
+            
+            //Replaces all characters in the service variable except for digits
             String integersOnly = service.replaceAll("[^0-9]", "");
+            
+            
+            //Parses the integersOnly String to an integer.
             int Quantity = Integer.parseInt(integersOnly);
 
+            
+            // For each value of every Enum
             for (Items item : items) {
+                
+                
 
                 if (service.matches("buy.* " + item.getItems().toLowerCase())) {
 
